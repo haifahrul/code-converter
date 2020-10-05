@@ -3,14 +3,8 @@
 ![stars](https://img.shields.io/github/stars/haifahrul/code-converter)
 ![Hacktoberfest](https://img.shields.io/badge/Hacktoberfest-red)
 
-# code-converter based on website
+# Code Converter based on website
 Any converter tools is based on web. We made it to convert any type data such as JSON to Byte, Byte to JSON or etc.
-
-## TODO
--  [ ] Create UI/UX for input the value
--  [ ] Convert Byte to JSON
-
-let`s discuss for other converter or UI/UX...
 
 # Getting started
 
