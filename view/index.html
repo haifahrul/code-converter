@@ -22,6 +22,7 @@
             <select class="form-control" id="formSelector">
 
                 <option>JSON - Byte</option>
+                <option>Byte - JSON</option>
               </select>
               <button id="convert-btn" class="btn btn-primary">Convert</button>
           </div>
@@ -44,11 +45,11 @@ const valueFrom = document.getElementById('value-from')
 const valueTo = document.getElementById('value-to')
 const convertBtn = document.getElementById('convert-btn')
 
-const changeText=()=>{
-    const splitValue=formSelector.value.split('-');
-    console.log("changeText -> formSelector", formSelector)
+const doCalculate=()=>{
+  const splitValue=formSelector.value.split('-');
     convertTo.innerHTML=splitValue[1];
     convertFrom.innerHTML=splitValue[0]
+  if(valueFrom.value!==""){    
     fetch('/convert',
     {
     method: 'POST',
@@ -64,14 +65,29 @@ const changeText=()=>{
   }
     ).then(res=>res.json())
     .then(data=>{
+    if(data.text){
+      valueTo.innerHTML= data.data
+    }else{
       valueTo.innerHTML= JSON.parse(data).data
-    }).catch(()=>{
-      console.log('Error Detected...')
+    }
+    }).catch((err)=>{
+      console.log(err)
     })
+  }else{
+    alert(`${splitValue[0]}can't be Empty`)
+  }
 }
 
-convertBtn.addEventListener('click',changeText)
+const changeText=()=>{
+  const splitValue=formSelector.value.split('-');
+  convertTo.innerHTML=splitValue[1];
+  convertFrom.innerHTML=splitValue[0]
+  valueFrom.value="";
+  valueTo.value="";
+}
 
+convertBtn.addEventListener('click',doCalculate)
+formSelector.addEventListener('change',changeText)
 
 </script>
 </html>

@@ -11,10 +11,23 @@ app.get('/', (req, res,next)=>{
   res.sendFile(path.join(__dirname, 'view', 'index.html'));
 });
 app.post('/convert', (req, res,next)=>{
-  let {data}=req.body;
-    let bufferOne = Buffer.from(JSON.stringify(data));
-    let byte = JSON.stringify(bufferOne);
-    res.json(byte).end()                   
+  try{
+  let {to,data}=req.body;
+  if(to=='Byte'){
+      let bufferOne = Buffer.from(JSON.stringify(data));
+      let byte = JSON.stringify(bufferOne);
+      res.json(byte).end()  
+  }
+  else{
+    const dataArr=data.split(',')
+    var str = String.fromCharCode.apply(String, dataArr);
+    var obj = JSON.parse(str);
+    console.log("obj", obj)
+    res.json({data:obj,text:true}).end()  
+  }
+}catch{
+  res.status(400).end()
+}       
   
 });
 app.use((req, res,next)=>{
