@@ -16,7 +16,7 @@ To get started locally, follow these instructions:
 2.  Make sure you have Node installed; see instructions [here](https://nodejs.org/en/download/).
 3.  Run `npm run` to install dependencies.
 
-Or you can using my playground at https://stackblitz.com/edit/code-converter
+Or you can use my playground at https://stackblitz.com/edit/code-converter
 
 ## Contribution Guidelines
  -  ***fork*** and ***clone*** this repository
