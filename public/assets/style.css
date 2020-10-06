@@ -1,0 +1,22 @@
+body{
+    background-image: url(./Taieri.png);
+    background-repeat: no-repeat;
+    
+}
+.container{
+    margin-top: 10%;
+    background-color: #fff;
+    padding: 2%;
+    border-radius: .5rem;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.combo-box{
+    margin-top: 15%;
+}
+.text-label{
+    font-family: 'Varela Round', sans-serif;
+}
+.btn-primary{
+    width: 55%;
+    margin: 1rem 22.5%;
+}

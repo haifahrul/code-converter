@@ -2,5 +2,10 @@
     "name": "code-converter",
     "version": "0.0.1",
     "private": false,
-    "dependencies": {}
-  }
+    "dependencies": {
+        "body-parser": "^1.19.0",
+        "buffer": "^5.6.0",
+        "express": "^4.17.1",
+        "tailwindcss": "^1.8.10"
+    }
+}
